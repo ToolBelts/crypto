@@ -1,5 +1,6 @@
 package com.toolsbelt.crypto;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,7 @@ public class CryptoApplicationTests {
     public void encryptValue() {
 
         String encrypt = this.cryptoManager.encrypt(BASIC_TEXT);
-        assert !BASIC_TEXT.equals(encrypt);
+        Assert.assertNotEquals(BASIC_TEXT, encrypt);
     }
 
     @Test
@@ -31,7 +32,7 @@ public class CryptoApplicationTests {
         String encrypt = this.cryptoManager.encrypt(BASIC_TEXT);
         String decrypt = this.cryptoManager.decrypt(encrypt);
 
-        assert decrypt.equals(BASIC_TEXT);
+        Assert.assertEquals(decrypt, BASIC_TEXT);
     }
 
     @SpringBootApplication
