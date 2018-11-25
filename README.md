@@ -20,4 +20,3 @@ security-crypto:
   basic-algorithm: "AES"
   complex-algorithm: "AES/ECB/PKCS5PADDING"
 ```
-
