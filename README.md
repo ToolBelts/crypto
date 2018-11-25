@@ -21,4 +21,3 @@ security-crypto:
   complex-algorithm: "AES/ECB/PKCS5PADDING"
 ```
 
-
