@@ -1,0 +1,60 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven-publish'
+
+group = 'com.toolsbelt'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'Crypto - Basic Encryption'
+                description = 'basic encryption to spring boot projects'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'leleco'
+                        name = 'leandro costa'
+                        email = 'lcosta.sp.br@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/ToolBelts/crypto.git'
+                    developerConnection = 'scm:git:ssh://git@github.com:ToolBelts/crypto.git'
+                    url = 'https://github.com/ToolBelts/crypto'
+                }
+            }
+        }
+    }
+}

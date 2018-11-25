@@ -1,0 +1,6 @@
+security-crypto:
+  secret-key: "MY-S3cR3T"
+  charset: "UTF-8"
+  digest: "SHA-1"
+  basic-algorithm: "AES"
+  complex-algorithm: "AES/ECB/PKCS5PADDING"
