@@ -57,4 +57,7 @@ publishing {
             }
         }
     }
+    repositories {
+        mavenCentral()
+    }
 }
